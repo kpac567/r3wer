@@ -1,20 +1,26 @@
 {
-  "name": "chatcord",
+  "name": "crush chatapp",
   "version": "1.0.0",
-  "description": "Realtime chat app with rooms",
+  "description": "Chat app using mongodb, express, react , node and socket.io",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "dev": "nodemon server"
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
-  "author": "Kevin Paczkowski",
-  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1",
-    "moment": "^2.24.0",
-    "socket.io": "^2.3.0"
+    "body-parser": "*",
+    "concurrently": "*",
+    "cors": "^2.8.4",
+    "express": "*",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "*",
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
-  }
+    "nodemon": "*"
+  },
+  "author": "MD Ariful Islam",
+  "license": "ISC"
 }
