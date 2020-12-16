@@ -2,17 +2,16 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const config = require('./config/database');
 const cors = require('cors');
 const hbs = require('express-handlebars');
+require("dotenv").config();
 
 // get config of database
-mongoose.connect(config.database);
-
+mongoose.connect(process.env.DATABASE_URL);
 
 // on connect database
 mongoose.connection.on('connected', () => {
-    console.log('mongoose connected as:' + config.database);
+    console.log('mongoose connected');
 });
 
 // on reject database
@@ -26,23 +25,17 @@ const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
 // chats api routes
-const chats = require('./routes/api/chats');
+const chats = require('./backend/routes/api/chats');
 
 // Port Number
-const port = 5000;
+const PORT = process.env.PORT || 5000;
 
 // CORS Middleware
 app.use(cors());
 
 // set static folder
 // To serve static files such as images, CSS files, and JavaScript files
-// app.use(express.static(path.join(__dirname, 'public')));// absolute path
-/**
- * set view engine for backend test, that is not necessary after added react front end
- */
-app.set('views', path.join(__dirname, 'views'));
-app.engine('hbs', hbs({extname: 'hbs', defaultLayout: 'layout', layoutsDir:__dirname+'/views/layouts'}));
-app.set('view engine', 'hbs');
+app.use(express.static(path.join(__dirname, 'build')));// absolute path
 
 // Body Parser Middleware
 app.use(bodyParser.json());
@@ -75,13 +68,12 @@ io.on('connection', function(socket) {
     });
 });
 
-// index route
-app.get('/', (req, res) => {
-    res.render('index');
-});
+app.get("/*", (req, res) => {
+    res.sendFile(path.join(__dirname, "build", "index.html"))
+})
 
 // start server here
-http.listen(port, () => {
-    console.log('SERVER started on port number: '+port);
+http.listen(PORT, () => {
+    console.log('SERVER started on port number: '+PORT);
 });
 

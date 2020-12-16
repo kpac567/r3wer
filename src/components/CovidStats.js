@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 class CovidStats extends React.Component {
     render() {
@@ -21,13 +20,5 @@ class CovidStats extends React.Component {
         )
     }
 }
-
-
-function mapState(state) {
-    return {};
-}
-
-const actionCreators = {
-}
       
-export default connect(mapState, actionCreators)(CovidStats);
+export default CovidStats;

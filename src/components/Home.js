@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import NavigationBar from './NavigationBar';
 
 class Home extends React.Component {
@@ -266,13 +265,6 @@ class Home extends React.Component {
     )
   }
 }
-
-function mapState(state) {
-  return {};
-}
-
-const actionCreators = {
-}
       
-export default connect(mapState, actionCreators)(Home);
+export default Home;
 

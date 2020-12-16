@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 class NavigationBar extends React.Component {
@@ -54,11 +53,4 @@ class NavigationBar extends React.Component {
   };
 }
 
-function mapState(state) {
-    return {};
-}
-
-const actionCreators = {
-};
-
-export default connect(mapState, actionCreators)(NavigationBar);
+export default NavigationBar;

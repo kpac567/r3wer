@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import AppNavbar from "./components/AppNavbar";
@@ -82,10 +81,4 @@ class App extends Component {
   }
 }
 
-function mapState(state) {
-  return {};
-}
-
-const actionCreators = {};
-
-export default connect(mapState, actionCreators)(App);
+export default App;

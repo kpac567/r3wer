@@ -5,7 +5,6 @@
  */
 const express = require('express');
 const router = express.Router();
-const config = require('../../config/database');
 const Chat = require('../../models/chat');
 const ChatDetail = require('../../models/chatDetail');
 const http = require('http').Server(express);

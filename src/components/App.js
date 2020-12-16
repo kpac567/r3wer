@@ -12,8 +12,6 @@ import Chat from './Components/Chat';
 import ChatRoom from './Components/ChatRoom';
 // import './css/styles.css';
 
-import { connect } from 'react-redux';
-
 
 class App extends Component {
   render() {
@@ -41,11 +39,5 @@ class App extends Component {
     );
   }
 }
-function mapState(state) {
-    return {};
-}
 
-const actionCreators = {
-};
-
-export default connect(mapState, actionCreators)(App);
+export default App;

@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 class Footer extends React.Component {
     render() {
@@ -16,13 +15,5 @@ class Footer extends React.Component {
         )
     }
 }
-
-
-function mapState(state) {
-    return {};
-}
-
-const actionCreators = {
-}
-      
-export default connect(mapState, actionCreators)(Footer);
+ 
+export default Footer;

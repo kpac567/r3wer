@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const config = require('../config/database');
 
 // Chat Detail Schema
 const ChatDetailSchema = mongoose.Schema({

@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { connect } from 'react-redux';
 
 class LoginForm extends React.Component {
     render() {
@@ -47,11 +46,4 @@ class LoginForm extends React.Component {
     }
 }
 
-function mapState(state) {
-  return {};
-}
-
-const actionCreators = {
-};
-
-export default connect(mapState, actionCreators)(LoginForm);
+export default LoginForm;
