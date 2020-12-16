@@ -7,11 +7,11 @@ const hbs = require('express-handlebars');
 require("dotenv").config();
 
 // get config of database
-mongoose.connect(process.env.DATABASE_URL);
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 
 // on connect database
 mongoose.connection.on('connected', () => {
-    console.log('mongoose connected');
+    console.log('mongodb connected');
 });
 
 // on reject database
