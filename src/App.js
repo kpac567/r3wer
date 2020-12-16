@@ -4,16 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // import AppNavbar from "./components/AppNavbar";
 import ChatDetail from "./components/ChatDetail";
 import CreateRoom from "./components/CreateRoom";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import { ListGroup, ListGroupItem } from "reactstrap";
 import NavigationBar from "./components/NavigationBar";
 import Footer from "./components/Footer";
-// import {
-//   BrowserRouter as Router,
-//   Route,
-//   Switch,
-//   Redirect,
-// } from "react-router-dom";
 import Home from "./components/Home";
 import LoginForm from "./components/LoginForm";
 import Parks from "./components/Parks";
@@ -48,7 +42,6 @@ class App extends Component {
 
         {/* <hr />
         <h3>Chat Room List</h3> */}
-        <Router>
           <Switch>
             <NavigationBar />
             {/* this fuction if you load just the domain name (/) will redirect to registration */}
@@ -71,7 +64,6 @@ class App extends Component {
             ))}
           </ListGroup>
           <Footer />
-        </Router>
       </div>
     );
   }
