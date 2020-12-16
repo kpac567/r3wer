@@ -10,43 +10,43 @@ class NavigationBar extends React.Component {
         data-animation="default"
         data-duration="400"
         role="banner"
-        class="fixed-nav w-nav"
+        className="fixed-nav w-nav"
       >
-        <div class="container nav-container w-container">
-          <Link to="/" class="brand w-nav-brand w--current">
+        <div className="container nav-container w-container">
+          <Link to="/" className="brand w-nav-brand w--current">
             <img
               src="/images/New-Project-3.png"
               width="80"
               alt=""
-              class="nav-logo"
+              className="nav-logo"
             />
           </Link>
-          <nav role="navigation" class="nav-menu w-nav-menu">
-            <Link to="/login" class="nav-link w-inline-block">
-              <div class="nav-link-text">Login</div>
+          <nav role="navigation" className="nav-menu w-nav-menu">
+            <Link to="/login" className="nav-link w-inline-block">
+              <div className="nav-link-text">Login</div>
             </Link>
-            <Link to="/chat" class="nav-link w-inline-block">
-              <div class="nav-link-text">Chat</div>
+            <Link to="/chat" className="nav-link w-inline-block">
+              <div className="nav-link-text">Chat</div>
             </Link>
-            <Link to="/parks" class="nav-link w-inline-block">
-              <div class="nav-link-text">Parks</div>
+            <Link to="/parks" className="nav-link w-inline-block">
+              <div className="nav-link-text">Parks</div>
             </Link>
-            <Link to="/swipe" class="nav-link w-inline-block">
-              <div class="nav-link-text">Swipe</div>
+            <Link to="/swipe" className="nav-link w-inline-block">
+              <div className="nav-link-text">Swipe</div>
             </Link>
-            <Link to="/covid-stats" class="nav-link w-inline-block">
+            <Link to="/covid-stats" className="nav-link w-inline-block">
               Covid Stats
             </Link>
-            <Link to="/chat-room" class="nav-link w-inline-block">
+            <Link to="/chat-room" className="nav-link w-inline-block">
               ChatRoom
             </Link>
           </nav>
-          <div class="menu-button w-nav-button">
+          <div className="menu-button w-nav-button">
             <img src="/images/menu-icon-white.svg" loading="lazy" alt="" />
           </div>
         </div>
-        <div class="nav-gradient-container">
-          <div class="gradient-line thin"></div>
+        <div className="nav-gradient-container">
+          <div className="gradient-line thin"></div>
         </div>
       </div>
     );

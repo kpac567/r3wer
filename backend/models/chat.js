@@ -9,10 +9,11 @@ const ChatSchema = mongoose.Schema({
     createdBy: {
         type: String,
         required: true
-    }
+    },
+    members: []
 });
 
-const Chat =  module.exports = mongoose.model('Chat', ChatSchema);
+module.exports = mongoose.model('Chat', ChatSchema);
 
 module.exports.addChatRoom = function (newChat, callback) {
     newChat.save(callback);

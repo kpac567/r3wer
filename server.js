@@ -33,28 +33,19 @@ const PORT = process.env.PORT || 5000;
 // CORS Middleware
 app.use(cors());
 
-// set static folder
-// To serve static files such as images, CSS files, and JavaScript files
-app.use(express.static(path.join(__dirname, 'build')));// absolute path
-
 // Body Parser Middleware
 app.use(bodyParser.json());
 // using chats routes as localhost:portnumber/chats/nextpath.
 app.use('/chats', chats);
 
+users = [];
+
 //Whenever someone connects this gets executed
 io.on('connection', function(socket) {
-    console.log('A user connected..........');
-
-    //Whenever someone disconnects this piece of code executed
-    socket.on('disconnect', function () {
-        console.log('A user disconnected........');
-    });
-});
-
-users = [];
-io.on('connection', function(socket) {
+    global.socket = socket;
+    global.io = io;
     console.log('A user connected');
+    socket.emit('yoo', {hey: 'jjjjj'})
     socket.on('setMsgBy', function(data) {
         console.log(data);
         // check this msgBy in chatroom of database
@@ -66,11 +57,22 @@ io.on('connection', function(socket) {
         //Send message to everyone
         io.sockets.emit('newmsg', data);
     });
+
+    //Whenever someone disconnects this piece of code executed
+    socket.on('disconnect', function () {
+        console.log('A user disconnected........');
+    });
 });
 
-app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, "build", "index.html"))
-})
+if (process.env.NODE_ENV === 'production') {
+    app.get("/*", (req, res) => {
+        res.sendFile(path.join(__dirname, "build", "index.html"))
+    });
+    
+    // set static folder
+    // To serve static files such as images, CSS files, and JavaScript files
+    app.use(express.static(path.join(__dirname, 'build')));// absolute path
+}
 
 // start server here
 http.listen(PORT, () => {
