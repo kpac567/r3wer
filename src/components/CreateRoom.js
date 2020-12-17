@@ -18,7 +18,7 @@ class CreateRoom extends Component {
     super(props);
     this.state = {
       modal: false,
-      roomTitle: "",
+      roomTitle: "vaccinated",
       createdBy: "",
     };
 
