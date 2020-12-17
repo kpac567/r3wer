@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Input, ListGroup, ListGroupItem, Button, Form } from "reactstrap";
-import socketIoClient from "socket.io-client";
+//import socketIoClient from "socket.io-client";
 
 class ChatDetail extends Component {
   constructor(props) {
