@@ -65,13 +65,13 @@ io.on('connection', function(socket) {
 });
 
 if (process.env.NODE_ENV === 'production') {
-    app.get("/*", (req, res) => {
-        res.sendFile(path.join(__dirname, "build", "index.html"))
-    });
-    
-    // set static folder
+        // set static folder
     // To serve static files such as images, CSS files, and JavaScript files
     app.use(express.static(path.join(__dirname, 'build')));// absolute path
+    
+    app.get("/*", (req, res) => {
+        res.sendFile(path.join(__dirname, "build", "index.html"))
+    });    
 }
 
 // start server here
